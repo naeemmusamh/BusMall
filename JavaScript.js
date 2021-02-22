@@ -3,6 +3,9 @@
 let hightTryclick = 25;
 let startclick = 0;
 let newArray = [];
+let nameProdect = [];
+let voteProduct = [];
+let showProduct = [];
 let image1Element = document.getElementById('image1');
 let image2Element = document.getElementById('image2');
 let image3Element = document.getElementById('image3');
@@ -13,6 +16,7 @@ function Mall(name, source) {
     this.vote = 0;
     this.show = 0;
     newArray.push(this);
+    nameProdect.push(this.name);
 }
 
 new Mall('bag', 'img/bag.jpg');
@@ -41,20 +45,37 @@ new Mall('wine-glass', 'img/wine-glass.jpg');
 let image1Box;
 let image2Box;
 let image3Box;
-
+let imagecorrect = [];
+console.log(imagecorrect);
 
 function renderThereimage() {
     image1Box = randomNumber();
     image2Box = randomNumber();
     image3Box = randomNumber();
 
-    while (image1Box === image2Box) {
+    do {
         image1Box = randomNumber();
+        if (image1Box === image2Box) {
+            image2Box = randomNumber();
+        } else if (image2Box === image3Box) {
+            image2Box = randomNumber();
+        } else if (image1Box === image3Box) {
+            image3Box = randomNumber();
+        }
     }
+    while (image1Box === image2Box || image2Box === image3Box || image3Box === image1Box)
 
     image1Element.setAttribute('src', newArray[image1Box].source);
     image2Element.setAttribute('src', newArray[image2Box].source);
     image3Element.setAttribute('src', newArray[image3Box].source);
+    newArray[image2Box].show++;
+    newArray[image1Box].show++;
+    newArray[image3Box].show++;
+    // for (let x = 0; x < newArray.length; x++) {
+    //     imagecorrect.push(image1Element);
+    //     image2Element.push(image2Element);
+    //     imagecorrect.push(image3Element);
+    // }
 }
 renderThereimage();
 
@@ -63,30 +84,21 @@ function randomNumber() {
     return randomnumber;
 }
 
+
 image1Element.addEventListener('click', handleClicking);
 image2Element.addEventListener('click', handleClicking);
 image3Element.addEventListener('click', handleClicking);
+
 
 
 function handleClicking(event) {
     startclick++;
     if (startclick <= hightTryclick) {
 
-        if (event.target.id === 'image1') {
+        if (event.target.id === 'image1' || event.target.id === 'image2' || event.target.id === 'image3') {
             newArray[image1Box].vote++;
-            newArray[image1Box].show++;
-            newArray[image2Box].show++;
-            newArray[image3Box].show++;
-        } else if (event.target.id === 'image2') {
             newArray[image2Box].voe++;
-            newArray[image1Box].show++;
-            newArray[image2Box].show++;
-            newArray[image3Box].show++;
-        } else {
             newArray[image3Box].vote++;
-            newArray[image1Box].show++;
-            newArray[image2Box].show++;
-            newArray[image3Box].show++;
         }
         renderThereimage();
     } else {
@@ -103,10 +115,40 @@ function handleClicking(event) {
                 liElement.textContent = `image${newArray[x].name} it has be ${newArray[x].vote} time votes and showing ${newArray[x].show} time.`
                 unorderListelement.removeEventListener('click', unorderlist);
             }
+
         }
+        for (let x = 0; x < newArray.length; x++) {
+            voteProduct.push(newArray[x].vote);
+            showProduct.push(newArray[x].show);
+        }
+        chartform();
         image1Element.removeEventListener('click', handleClicking);
         image2Element.removeEventListener('click', handleClicking);
         image3Element.removeEventListener('click', handleClicking);
     }
 
 }
+
+function chartform() {
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'polarArea',
+        data: {
+            labels: nameProdect,
+            datasets: [{
+                label: 'product Votes',
+                backgroundColor: '#d463d4fd',
+                borderColor: '#000000',
+                data: voteProduct,
+            }, {
+                label: 'product showing',
+                backgroundColor: 'white',
+                borderColor: '#000000',
+                data: showProduct,
+            }]
+        },
+        options: {}
+    });
+}
+// chartform();
+// console.log(chartform);

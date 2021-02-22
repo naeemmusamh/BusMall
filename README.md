@@ -16,4 +16,6 @@ img folder
 
 the image i copy it from LTUC repo and the link here [GitHub repo](https://github.com/LTUC/amman-201d14/tree/main/class-11/lab/assets)
 
+in the bransh chart.js i used for chart.js this source [FusionCharts](https://www.fusioncharts.com/dev/getting-started/plain-javascript/rendering-different-charts-using-plain-javascript)
+
 HAVE FUN
