@@ -70,7 +70,7 @@ header .a1 {
     font-size: larger;
     position: relative;
     bottom: 260px;
-    color: rgba(255, 255, 255, 0.774);
+    color: #003300;
     font-size: x-large;
 }
 
@@ -94,7 +94,7 @@ footer {
     position: relative;
     left: 350px;
     margin-bottom: 100px;
-    color: rgba(255, 255, 255, 0.637);
+    color: #003300;
 }
 
 #b1 {
