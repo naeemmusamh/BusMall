@@ -18,4 +18,10 @@ the image i copy it from LTUC repo and the link here [GitHub repo](https://githu
 
 in the bransh chart.js i used for chart.js this source [FusionCharts](https://www.fusioncharts.com/dev/getting-started/plain-javascript/rendering-different-charts-using-plain-javascript)
 
+I have some help in branch chart.js from Areen be let me see here code and learn from his
+
+for the brand add local storage I have some help from Waleed
+
+so thank you 
+
 HAVE FUN
