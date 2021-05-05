@@ -3,14 +3,14 @@
 }
 
 body {
-    background-image: url("img/image.jpg");
+    background-image: url("https://static.vecteezy.com/system/resources/previews/000/565/101/non_2x/web-designer-tools-icon-pattern-background-vector.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
 
 header {
-    background-color: #d463d4fd;
+    background-color: #7e46acfd;
 }
 
 header img {
@@ -70,14 +70,14 @@ header .a1 {
     font-size: larger;
     position: relative;
     bottom: 260px;
-    color: #003300;
+    color: white;
     font-size: x-large;
 }
 
 footer {
     font-family: 'Aguafina Script', cursive;
     font-family: 'Bilbo Swash Caps', cursive;
-    background-color: #d463d4fd;
+    background-color: #7e46acfd;
     color: white;
     text-align: center;
     position: relative;
@@ -94,7 +94,7 @@ footer {
     position: relative;
     left: 350px;
     margin-bottom: 100px;
-    color: #003300;
+    color: white;
 }
 
 #b1 {
@@ -103,7 +103,7 @@ footer {
 
 #show {
     width: 50px;
-    background-color: #d463d4fd;
+    background-color: #7e46acfd;
 }
 
 #vote {

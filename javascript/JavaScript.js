@@ -142,7 +142,7 @@ function chartform() {
             labels: nameProdect,
             datasets: [{
                 label: 'product Votes',
-                backgroundColor: '#d463d4fd',
+                backgroundColor: '#7e46acfd',
                 borderColor: '#000000',
                 data: voteProduct,
             }, {
@@ -170,8 +170,6 @@ function savaData() {
     // console.log(saveDataitem);
     if (saveDataitem) {
         newArray = saveDataitem;
-    } else {
-        newArray = [];
     }
     renderThereimage();
 }
